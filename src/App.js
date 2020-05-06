@@ -1,16 +1,21 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import NavBarcomp from "./comp/NavBar"
+import { Button,Container } from 'reactstrap';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Button outline={true} color="primary">
-        heres a reactstrap button
-      </Button>
-      <Button outline={false} color="primary">
-        heres a reactstrap button
-      </Button>
+      <NavBarcomp/>
+      <Container className="themed-container" fluid="sm">
+        contain
+        <Button outline={true} color="primary">
+          heres a reactstrap button
+        </Button>
+        <Button outline={false} color="primary">
+          heres a reactstrap button
+        </Button>
+      </Container>
     </div>
   );
 }
