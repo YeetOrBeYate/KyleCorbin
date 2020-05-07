@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarcomp from "./comp/NavBar"
+import FooterBar from "./comp/FooterBar"
 import { Button,Container } from 'reactstrap';
 import './App.css';
 
@@ -46,61 +47,8 @@ function App() {
         <p>yeet</p>
         <p>yeet</p>
         <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-
       </Container>
+      <FooterBar/>
     </div>
   );
 }
