@@ -5,3 +5,18 @@
 .themed-container{
   border:.3px solid red
 }
+
+.navbar{
+  transition: padding .7s;
+  padding: 1.5%;
+}
+
+
+.sticky{
+  position: fixed;
+  top:0;
+  width:100%;
+  padding: .5% ;
+  transition: padding .7s;
+}
+

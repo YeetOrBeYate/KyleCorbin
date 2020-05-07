@@ -4,6 +4,10 @@ import { Button,Container } from 'reactstrap';
 import './App.css';
 
 function App() {
+
+
+
+
   return (
     <div className="App">
       <NavBarcomp/>
@@ -15,6 +19,87 @@ function App() {
         <Button outline={false} color="primary">
           heres a reactstrap button
         </Button>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+        <p>yeet</p>
+
       </Container>
     </div>
   );
