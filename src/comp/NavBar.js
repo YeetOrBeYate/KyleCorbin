@@ -8,9 +8,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Col,
-    Row,
-    Container
   } from 'reactstrap';
 
 const NavBarcomp = ()=>{

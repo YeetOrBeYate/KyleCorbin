@@ -1,7 +1,11 @@
 import React from 'react';
 import NavBarcomp from "./comp/NavBar"
 import FooterBar from "./comp/FooterBar"
-import { Button,Container } from 'reactstrap';
+import Home from './comp/Home'
+import {Container } from 'reactstrap';
+import {Route} from "react-router-dom"
+
+import self from "./img/self.jpg"
 import './App.css';
 
 function App() {
@@ -13,40 +17,7 @@ function App() {
     <div className="App">
       <NavBarcomp/>
       <Container className="themed-container" fluid="sm">
-        contain
-        <Button outline={true} color="primary">
-          heres a reactstrap button
-        </Button>
-        <Button outline={false} color="primary">
-          heres a reactstrap button
-        </Button>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
-        <p>yeet</p>
+        <Route path='/' component={Home}/>
       </Container>
       <FooterBar/>
     </div>
