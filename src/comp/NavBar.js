@@ -20,7 +20,10 @@ const NavBarcomp = ()=>{
 
     window.addEventListener("scroll", function(){
         let nav = document.querySelector('.navbar');
-        nav.classList.toggle('sticky', window.scrollY>5)
+        nav.classList.toggle('sticky', window.scrollY>50)
+
+        let fake = document.querySelector('.fakeNav');
+        fake.classList.toggle('visible', window.scrollY>50)
 
     })
 
@@ -45,6 +48,9 @@ const NavBarcomp = ()=>{
             </Nav>
             </Collapse>
         </Navbar>
+        <div className="fakeNav">
+            placeholderNav
+        </div>
     </div>
     )
 

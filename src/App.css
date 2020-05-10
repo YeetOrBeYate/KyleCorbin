@@ -3,11 +3,11 @@
 }
 
 .themed-container{
-  border:.3px solid red
+  border:.3px solid red;
+  transition: all .7s;
 }
 
 .navbar{
-  transition: padding .7s;
   padding: 1.5%;
 }
 
@@ -17,6 +17,17 @@
   top:0;
   width:100%;
   padding: .5% ;
+  transition: padding .7s;
+}
+
+.fakeNav{
+  height: 95.2px;
+  display: none;
+  transition: padding .7s;
+}
+.visible{
+  display: block;
+  padding: 1.5%;
   transition: padding .7s;
 }
 
