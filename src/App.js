@@ -5,7 +5,6 @@ import Home from './comp/Home'
 import {Container } from 'reactstrap';
 import {Route} from "react-router-dom"
 
-import self from "./img/self.jpg"
 import './App.css';
 
 function App() {

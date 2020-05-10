@@ -19,12 +19,11 @@ const NavBarcomp = ()=>{
     const [isOpen,setIsOpen] = React.useState(false)
 
     window.addEventListener("scroll", function(){
-        let nav = document.querySelector('.navbar');
-        nav.classList.toggle('sticky', window.scrollY>50)
-
         let fake = document.querySelector('.fakeNav');
-        fake.classList.toggle('visible', window.scrollY>50)
+        fake.classList.toggle('visible', window.scrollY>100)
 
+        let nav = document.querySelector('.navbar');
+        nav.classList.toggle('sticky', window.scrollY>100)
     })
 
     return(
