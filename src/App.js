@@ -2,8 +2,9 @@ import React from 'react';
 import NavBarcomp from "./comp/NavBar"
 import FooterBar from "./comp/FooterBar"
 import Home from './comp/Home'
+import Portfolio from './comp/Portfolio'
 import {Container } from 'reactstrap';
-import {Route} from "react-router-dom"
+import {Route,Switch} from "react-router-dom"
 
 import './App.css';
 
@@ -16,7 +17,10 @@ function App() {
     <div className="App">
       <NavBarcomp/>
       <Container className="themed-container" fluid="sm">
-        <Route path='/' component={Home}/>
+        <Switch>
+          <Route path="/portfolio" component={Portfolio}/>
+          <Route path='/' component={Home}/>
+        </Switch>
       </Container>
       <FooterBar/>
     </div>
