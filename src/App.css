@@ -6,6 +6,7 @@
   border:.1px solid transparent;
   box-shadow: 0px 0px 3px 1px #888888;
   margin: 1% auto;
+  min-height: 762px;
 }
 
 .navbar{
@@ -56,6 +57,7 @@
   width: 100%;
   margin: 1% 0;
   background-color: #f1f2f9;
+  border-radius: 0.3rem;
 }
 
 .media-left img{
@@ -80,6 +82,22 @@
 .homeChild{
   margin-right:10%;
 }
+
+.jumbotron{
+  text-align:left;
+  margin-top: 1%;
+}
+
+.badge{
+  padding: 1%;
+  text-transform: uppercase;
+  margin: .8% .5%;
+}
+
+.badge:hover{
+  cursor: pointer;
+}
+
 
 @media screen and (max-width:500px ){
 

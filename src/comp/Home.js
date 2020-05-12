@@ -1,5 +1,5 @@
 import React from 'react';
-import { Media,Container } from 'reactstrap';
+import { Media} from 'reactstrap';
 
 import self from "../img/profSelf.jpeg"
 import '../App.css';
