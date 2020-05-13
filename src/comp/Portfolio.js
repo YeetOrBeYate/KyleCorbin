@@ -8,7 +8,7 @@ const Portfolio = ()=>{
                 <h1>Web Developer Portfolio</h1>
                 <p>Full Stack, and Front end. I've used React/Redux, Node.js/Express.js, Ant-Design/Reactstrap, Postgresql,sqlite, Vanilla CSS, </p>
                 <div>
-                    <Badge onClick={()=>console.log('Show all')} color="secondary">Show All</Badge>
+                    <Badge onClick={()=>console.log('Show all')} color="secondary"><span>Show all</span></Badge>
                     <Badge color="secondary">Front-end</Badge>
                     <Badge color="secondary">Back-end</Badge>
                     <Badge color="secondary">Full-Stack</Badge>

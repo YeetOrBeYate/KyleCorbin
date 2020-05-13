@@ -92,11 +92,44 @@
   padding: 1%;
   text-transform: uppercase;
   margin: .8% .5%;
+  border:2px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
 .badge:hover{
   cursor: pointer;
 }
+
+.badge:hover::before{
+  top:0;
+  background-color: #515151;
+  transform: translate3d(105%,0,0);
+}
+
+.badge:hover::after{
+  background-color: #3f3f3f;
+  top: 50%;
+  transform: translate3d(-105%,0,0);
+  transition-delay: .2s;
+}
+
+.badge::before, .badge::after{
+  content: " ";
+  left: 0;
+  height: 50%;
+  display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: transform .3s cubic-bezier(.65,.05,.1,1);
+}
+
+.badge span{
+  position: relative;
+  z-index: 2;
+}
+
 
 
 @media screen and (max-width:500px ){
