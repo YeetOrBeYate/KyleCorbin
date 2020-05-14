@@ -1,5 +1,5 @@
 import React from 'react'
-import {Jumbotron, Container, Badge} from "reactstrap"
+import {Jumbotron, Container, Badge, } from "reactstrap"
 const Portfolio = ()=>{
 
     return(
@@ -9,18 +9,18 @@ const Portfolio = ()=>{
                 <p>Full Stack, and Front end. I've used React/Redux, Node.js/Express.js, Ant-Design/Reactstrap, Postgresql,sqlite, Vanilla CSS, </p>
                 <div>
                     <Badge onClick={()=>console.log('Show all')} color="secondary"><span>Show all</span></Badge>
-                    <Badge color="secondary">Front-end</Badge>
-                    <Badge color="secondary">Back-end</Badge>
-                    <Badge color="secondary">Full-Stack</Badge>
-                    <Badge color="secondary">React.js</Badge>
-                    <Badge color="secondary">Redux</Badge>
-                    <Badge color="secondary">Node.js</Badge>
-                    <Badge color="secondary">Express.js</Badge>
-                    <Badge color="secondary">Ant-Design</Badge>
-                    <Badge color="secondary">Reactstrap</Badge>
-                    <Badge color="secondary">Postgresql</Badge>
-                    <Badge color="secondary">Sqlite</Badge>
-                    <Badge color="secondary">CSS</Badge>
+                    <Badge color="secondary"><span>Front-end</span></Badge>
+                    <Badge color="secondary"><span>Back-end</span></Badge>
+                    <Badge color="secondary"><span>Full-Stack</span></Badge>
+                    <Badge color="secondary"><span>React.js</span></Badge>
+                    <Badge color="secondary"><span>Redux</span></Badge>
+                    <Badge color="secondary"><span>Node.js</span></Badge>
+                    <Badge color="secondary"><span>Express.js</span></Badge>
+                    <Badge color="secondary"><span>Ant-Design</span></Badge>
+                    <Badge color="secondary"><span>Reactstrap</span></Badge>
+                    <Badge color="secondary"><span>Postgresql</span></Badge>
+                    <Badge color="secondary"><span>Sqlite</span></Badge>
+                    <Badge color="secondary"><span>CSS</span></Badge>
                 </div>
             </Jumbotron>
         </div>

@@ -13,18 +13,20 @@ import {
 
 const NavBarcomp = ()=>{
 
-    const toggle = ()=>{
+    const toggleNav = ()=>{
         setIsOpen(!isOpen)
     }
 
     const [isOpen,setIsOpen] = React.useState(false)
 
     window.addEventListener("scroll", function(){
+
         let fake = document.querySelector('.fakeNav');
         fake.classList.toggle('visible', window.scrollY>100)
 
         let nav = document.querySelector('.navbar');
-        nav.classList.toggle('sticky', window.scrollY>100)
+        nav.classList.toggle('sticky',window.scrollY>100)
+
     })
 
     return(
@@ -33,7 +35,7 @@ const NavBarcomp = ()=>{
             <NavbarBrand href="/">
                 Kyle Corbin
             </NavbarBrand>
-            <NavbarToggler onClick={toggle} className="mr-2"/>
+            <NavbarToggler onClick={toggleNav} className="mr-2"/>
             <Collapse isOpen = {isOpen} navbar>
                 <Nav navbar>
                     <NavItem>
