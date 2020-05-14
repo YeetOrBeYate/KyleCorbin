@@ -23,6 +23,7 @@
   width:100%;
   padding: .5% ;
   transition: padding .7s;
+  z-index: 3;
 }
 
 .fakeNav{
@@ -109,11 +110,13 @@
   top:0;
   left:-100%;
   background-color: #6480af;
+  /* background-color: red; */
   transform: translate(100%,0);
 }
 
 .badge:hover::after{
   background-color: #4e6488;
+  /* background-color: black; */
   top: 50%;
   left:100%;
   transform: translate(-100%,0);
