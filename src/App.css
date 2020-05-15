@@ -173,6 +173,14 @@
   text-align: left;
 }
 
+.form-group{
+  
+}
+
+.contactForm{
+  text-align: left;
+}
+
 
 
 @media screen and (max-width:500px ){
