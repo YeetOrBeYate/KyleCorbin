@@ -105,7 +105,7 @@
   padding: 1%;
   text-transform: uppercase;
   margin: .8% .5%;
-
+  border:2px solid transparent;
 }
 
 
@@ -201,7 +201,14 @@
     width: 100%;
   }
 
+  
+}
 
+@media screen and (max-width:767px){
+  .portGrid{
+    display: flex;
+    flex-direction: column;
 
+  }
 }
 
