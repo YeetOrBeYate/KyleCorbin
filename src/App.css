@@ -92,7 +92,7 @@
   margin-top: 1%;
 }
 
-.badge{
+.jumbotron .badge{
   padding: 1%;
   text-transform: uppercase;
   margin: .8% .5%;
@@ -101,12 +101,19 @@
   overflow: hidden;
 }
 
+.badge{
+  padding: 1%;
+  text-transform: uppercase;
+  margin: .8% .5%;
 
-.badge:hover{
+}
+
+
+.jumbotron .badge:hover{
   cursor: pointer;
 }
 
-.badge:hover::before{
+.jumbotron .badge:hover::before{
   top:0;
   left:-100%;
   background-color: #6480af;
@@ -114,7 +121,7 @@
   transform: translate(100%,0);
 }
 
-.badge:hover::after{
+.jumbotron .badge:hover::after{
   background-color: #4e6488;
   /* background-color: black; */
   top: 50%;
@@ -123,7 +130,7 @@
   transition-delay: .2s;
 }
 
-.badge::before, .badge::after{
+.jumbotron .badge::before, .jumbotron .badge::after{
   content: " ";
   left: 0;
   height: 50%;
@@ -147,9 +154,23 @@
 }
 
 
-.badge span{
+.jumbotron .badge span{
   position: relative;
   z-index: 2;
+}
+
+.portGrid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 25% 25% 25%;
+  /* grid-template-rows: 50% 50%; */
+  justify-items: center;
+}
+
+.portGrid .card{
+  width: 80%;
+  margin:2% auto;
+  text-align: left;
 }
 
 

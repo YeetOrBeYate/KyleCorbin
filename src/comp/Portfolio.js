@@ -1,6 +1,32 @@
 import React from 'react'
-import {Jumbotron, Badge } from "reactstrap"
+import PortCard from "./PortCard"
+import Africa from "../img/Africa.png"
+import Country from "../img/Country.png"
+import {Jumbotron, Badge, Card, CardImg, CardTitle, CardBody } from "reactstrap"
 const Portfolio = ()=>{
+
+
+    const testdata = [
+        {
+            name:'Africa Market',
+            pic:Africa,
+            tags:['React.JS', 'Full-Stack', 'Redux', 'Node', "express.js", 'Postgresql', 'css']
+        },
+        {
+            name:'Country Directory',
+            pic:Country,
+            tags:['React.JS', 'front-end', 'Redux', 'ant-design']
+        },        {
+            name:'Africa Market',
+            pic:Africa,
+            tags:['React.JS', 'Full-Stack', 'Redux', 'Node', "express.js", 'Postgresql', 'css']
+        },
+        {
+            name:'Country Directory',
+            pic:Country,
+            tags:['React.JS', 'front-end', 'Redux', 'ant-design']
+        }
+    ]
 
     const changeActive = (e)=>{
         let former = document.querySelector('.activee')
@@ -16,10 +42,11 @@ const Portfolio = ()=>{
             }
         }else{
             //differinciating between child and parent
-            if(!e.target.classList.length ===0){
+            if(e.target.classList.length ===0){
                 let parent = e.target.parentNode
                 parent.classList.add('activee')
             }else{
+                console.log('actual', e.target.classList.length)
                 e.target.classList.add('activee')
             }
         }
@@ -47,6 +74,12 @@ const Portfolio = ()=>{
                     <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>CSS</span></Badge>
                 </div>
             </Jumbotron>
+            <div className = "portGrid">
+                {testdata.map((card,index)=>(
+                    <PortCard key={index} name={card.name} pic={card.pic} tags = {card.tags}/>
+                ))}
+
+            </div>
         </div>
     )
 
