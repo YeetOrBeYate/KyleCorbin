@@ -6,9 +6,28 @@ import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
+//Redux packages
+
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, combineReducers} from "redux";
+import thunk from "redux-thunk";
+
+//reducers
+
+import {ProjectReducer} from "./Reducers/Portfolio"
+
+//so far we only have one reducer but I like makeing a combined one just in case
+const rootReducer = combineReducers({
+  Projects:ProjectReducer
+})
+
+const store = createStore(rootReducer,applyMiddleware(thunk));
+
 ReactDOM.render(
   <Router>
-    <App />
+    <Provider store={store}>
+      <App /> 
+    </Provider>
   </Router>,
   document.getElementById('root')
 );
