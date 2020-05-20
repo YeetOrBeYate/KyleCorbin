@@ -4,20 +4,23 @@ import Africa from "../img/Africa.png"
 import Country from "../img/Country.png"
 import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
+import {getProjects} from "../Actions/PortfolioActions"
 import {Jumbotron, Badge} from "reactstrap"
 const Portfolio = ()=>{
 
     const dispatch = useDispatch()
 
     const Tags = useSelector(state=>state.Tags)
+    const Portfolio = useSelector(state=>state.Projects)
 
 
 
     React.useEffect(()=>{
         dispatch(getTags())
+        dispatch(getProjects())
     },[])
 
-    if (Tags.tags.length ===0){
+    if (Tags.tags.length === 0 || Portfolio.projects.length === 0){
         return(
             <div>
                 loading...
@@ -28,15 +31,6 @@ const Portfolio = ()=>{
 
     const testdata = [
         {
-            name:'Africa Market',
-            pic:Africa,
-            tags:['React.JS', 'Full-Stack', 'Redux', 'Node', "express.js", 'Postgresql', 'css']
-        },
-        {
-            name:'Country Directory',
-            pic:Country,
-            tags:['React.JS', 'front-end', 'Redux', 'ant-design']
-        },        {
             name:'Africa Market',
             pic:Africa,
             tags:['React.JS', 'Full-Stack', 'Redux', 'Node', "express.js", 'Postgresql', 'css']
@@ -87,8 +81,9 @@ const Portfolio = ()=>{
                 </div>
             </Jumbotron>
             <div className = "portGrid">
-                {testdata.map((card,index)=>(
-                    <PortCard key={index} name={card.name} pic={card.pic} tags = {card.tags}/>
+                {Portfolio.projects.map((proj,index)=>(
+                    <PortCard key={index} name={proj.name}
+                    pic={proj.picture} tags={proj.tags}/>
                 ))}
             </div>
         </div>

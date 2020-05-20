@@ -12,7 +12,7 @@ const PortCard = (props)=>{
                 <CardTitle>{props.name}</CardTitle>
                 <CardText>
                     {props.tags.map((tag,index)=>(
-                        <Badge key={index} color="secondary">{tag}</Badge>
+                        <Badge key={index} color="secondary">{tag.name}</Badge>
                     ))}
                 </CardText>
             </CardBody>
