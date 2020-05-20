@@ -13,8 +13,6 @@ const Portfolio = ()=>{
     const Tags = useSelector(state=>state.Tags)
     const Portfolio = useSelector(state=>state.Projects)
 
-
-
     React.useEffect(()=>{
         dispatch(getTags())
         dispatch(getProjects())
@@ -28,19 +26,6 @@ const Portfolio = ()=>{
         )
     }
 
-
-    const testdata = [
-        {
-            name:'Africa Market',
-            pic:Africa,
-            tags:['React.JS', 'Full-Stack', 'Redux', 'Node', "express.js", 'Postgresql', 'css']
-        },
-        {
-            name:'Country Directory',
-            pic:Country,
-            tags:['React.JS', 'front-end', 'Redux', 'ant-design']
-        }
-    ]
 
     const changeActive = (e)=>{
         let former = document.querySelector('.activee')

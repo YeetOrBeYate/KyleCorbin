@@ -4,6 +4,7 @@ import FooterBar from "./comp/FooterBar"
 import Home from './comp/Home'
 import Portfolio from './comp/Portfolio'
 import Contact from './comp/Contact'
+import ProjectPage from "./comp/ProjectPage"
 import {Container } from 'reactstrap';
 import {Route,Switch, Router} from "react-router-dom"
 
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route path="/portfolio" component={Portfolio}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/project" component={ProjectPage}/>
           <Route path='/' component={Home}/>
         </Switch>
       </Container>

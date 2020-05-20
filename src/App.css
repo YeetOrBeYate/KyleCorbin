@@ -181,6 +181,25 @@
   text-align: left;
 }
 
+.project{
+  text-align: left;
+}
+
+.headerFlex{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projectImage{
+  text-align: center;
+}
+
+.projectSection{
+  padding: 2rem 2rem;
+}
+
 
 
 @media screen and (max-width:500px ){

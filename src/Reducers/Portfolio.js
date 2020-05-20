@@ -3,6 +3,7 @@
 const initialState = {
     loading:false,
     failure:false,
+    single:null,
     projects:[]
 }
 
