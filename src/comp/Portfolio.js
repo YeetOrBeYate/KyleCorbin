@@ -2,8 +2,28 @@ import React from 'react'
 import PortCard from "./PortCard"
 import Africa from "../img/Africa.png"
 import Country from "../img/Country.png"
-import {Jumbotron, Badge, Card, CardImg, CardTitle, CardBody } from "reactstrap"
+import {useSelector,useDispatch} from 'react-redux'
+import {getTags} from "../Actions/TagsActions"
+import {Jumbotron, Badge} from "reactstrap"
 const Portfolio = ()=>{
+
+    const dispatch = useDispatch()
+
+    const Tags = useSelector(state=>state.Tags)
+
+
+
+    React.useEffect(()=>{
+        dispatch(getTags())
+    },[])
+
+    if (Tags.tags.length ===0){
+        return(
+            <div>
+                loading...
+            </div>
+        )
+    }
 
 
     const testdata = [
@@ -59,26 +79,17 @@ const Portfolio = ()=>{
                 <p>Full Stack, and Front end. I've used React/Redux, Node.js/Express.js,
                  Ant-Design/Reactstrap, Postgresql,sqlite, Vanilla CSS.</p>
                 <div>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Show all</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Front-end</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Back-end</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Full-Stack</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>React.js</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Redux</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Node.js</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Express.js</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Ant-Design</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Reactstrap</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Postgresql</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>Sqlite</span></Badge>
-                    <Badge onClick={(e)=>changeActive(e)} color="secondary"><span>CSS</span></Badge>
+                    {Tags.tags.map((badge,index)=>(
+                    <Badge key={index} onClick={(e)=>changeActive(e)} color="secondary">
+                        <span>{badge.name}</span>
+                    </Badge>
+                    ))}
                 </div>
             </Jumbotron>
             <div className = "portGrid">
                 {testdata.map((card,index)=>(
                     <PortCard key={index} name={card.name} pic={card.pic} tags = {card.tags}/>
                 ))}
-
             </div>
         </div>
     )
