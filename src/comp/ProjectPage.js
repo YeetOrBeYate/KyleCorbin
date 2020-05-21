@@ -1,11 +1,32 @@
 import React from 'react'
 import {Button,Jumbotron} from 'reactstrap'
+import {useSelector,useDispatch} from 'react-redux'
+import {getOneProject} from "../Actions/PortfolioActions"
 import Country from "../img/Country.png"
 
-const ProjectPage = ()=>{
+const ProjectPage = (props)=>{
+
+
+    const dispatch = useDispatch()
+
+    const Portfolio = useSelector(state=>state.Projects)
+
+    
+    React.useEffect(()=>{
+
+        dispatch(getOneProject(props.match.params.id))
+        
+    },[props.match.params.id])
+
+    if(!Portfolio.single){
+        return(<div>
+            loading....
+        </div>)
+    }
 
     return(
         <div className="project">
+        {console.log(Portfolio.single)}
             <Jumbotron>
                 <h1>Country Directory</h1>
                 <p> Ant-design layout driven by a React-Redux front end</p>
