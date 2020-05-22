@@ -92,7 +92,6 @@ const Portfolio = ()=>{
             <PortGrid/>
         </div>
     )
-
 }
 
 export default Portfolio
