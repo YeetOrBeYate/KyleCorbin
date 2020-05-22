@@ -49,3 +49,20 @@ export const getOneProject = (id)=>{
         })
     }
 }
+
+export const filterProject = (tagId)=>{
+    return function(dispatch){
+
+        dispatch(loading())
+
+        return axios.get(`http://localhost:4000/tags/${tagId}`)
+
+        .then(res=>{
+            dispatch(success(res.data.projects))
+        })
+
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
