@@ -11,6 +11,7 @@ const ProjectPage = (props)=>{
 
     const Portfolio = useSelector(state=>state.Projects)
 
+    let Project = Portfolio.single
     
     React.useEffect(()=>{
 
@@ -28,28 +29,34 @@ const ProjectPage = (props)=>{
         <div className="project">
         {console.log(Portfolio.single)}
             <Jumbotron>
-                <h1>Country Directory</h1>
-                <p> Ant-design layout driven by a React-Redux front end</p>
+                <h1>{Project.name}</h1>
+                <p>{Project.description}</p>
                 <div className="headerFlex">
-                    <Button color="info">Visit the Website</Button>
-                    <span>Github</span>
+                    <a href={Project.url} target="_blank" rel="noopener noreferrer">
+                        <Button color="info">Visit the Website</Button>
+                    </a>
+                    <div id='gitLinks'>
+                        {Project.repos.map((git,index)=>(
+                            <a key={index} href={git.url} target="_blank" rel="noopener noreferrer">{git.name}</a>
+                        ))}
+                    </div>
                 </div>
             </Jumbotron>
             <div className="projectImage">
-                <img src={Country} width="970px" 
-                height="562px" alt="yeet"/>
+                <img src={Project.picture}  alt="yeet"/>
             </div>
             <section className="projectSection">
                 <h1>About this project</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <hr></hr>
+                <p>{Project.about}</p>
             </section>
             <section className="projectSection">
                 <h1>Technology used</h1>
+                <hr></hr>
                 <ul>
-                    <li>tag1</li>
-                    <li>tag2</li>
-                    <li>tag3</li>
-                    <li>tag4</li>
+                    {Project.tags.map((tag,index)=>(
+                        <li key={index}>{tag.name}</li>
+                    ))}
                 </ul>
             </section>
         </div>

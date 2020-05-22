@@ -1,5 +1,6 @@
 import React from 'react'
-import {Badge, Card, CardImg, CardTitle, CardBody, CardText } from "reactstrap"
+import {Link} from 'react-router-dom'
+import {Badge, Card, CardImg, CardTitle, CardBody, CardText, Button } from "reactstrap"
 
 
 const PortCard = (props)=>{
@@ -15,6 +16,9 @@ const PortCard = (props)=>{
                         <Badge key={index} color="secondary">{tag.name}</Badge>
                     ))}
                 </CardText>
+                <Link to={`/project/${props.id}`}>
+                    <Button color="info">More info...</Button>
+                </Link>
             </CardBody>
         </Card>
 

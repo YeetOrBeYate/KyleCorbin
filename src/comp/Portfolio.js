@@ -67,7 +67,7 @@ const Portfolio = ()=>{
             </Jumbotron>
             <div className = "portGrid">
                 {Portfolio.projects.map((proj,index)=>(
-                    <PortCard key={index} name={proj.name}
+                    <PortCard key={index} id ={proj.id} name={proj.name}
                     pic={proj.picture} tags={proj.tags}/>
                 ))}
             </div>

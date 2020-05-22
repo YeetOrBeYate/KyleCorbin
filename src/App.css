@@ -194,10 +194,19 @@
 
 .projectImage{
   text-align: center;
+  height: 40%;
+}
+
+.projectImage img{
+  width:87.5%;
 }
 
 .projectSection{
   padding: 2rem 2rem;
+}
+
+#gitLinks a{
+  padding: 0 4px;
 }
 
 
