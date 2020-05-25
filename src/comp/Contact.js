@@ -1,12 +1,31 @@
 import React from "react"
-import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback} from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert} from 'reactstrap';
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
+import { ContactReducer } from "../Reducers/Contact";
 
 
 const Contact = ()=>{
 
     const dispatch = useDispatch()
+
+    const Contact = useSelector(state=>state.Contact)
+
+    React.useEffect(()=>{
+
+        if(Contact.loading){
+
+        }
+
+        if(Contact.failure){
+            setAlert({...alert, status:true, message:'Message was not sent- There might be a network interription, please retry', color:'danger'})
+        }
+
+        if(Contact.success){
+            setAlert({...alert, status:true, message:'Message sent- you should recieve a confirmation email momentarily!', color:'success'})
+        }
+
+    }, [Contact.loading, Contact.failure, Contact.success])
 
     const [contact, setContact] = React.useState({
         name:"",
@@ -23,6 +42,12 @@ const Contact = ()=>{
         email:"",
         phoneErr:"",
         phone:""
+    })
+
+    const [alert,setAlert] = React.useState({
+        status:false,
+        message:'',
+        color:''
     })
 
 
@@ -64,9 +89,19 @@ const Contact = ()=>{
         }
     }
 
+    const dismissAlert = ()=>{
+        setAlert({...alert, status:false, message:''})
+    }
+
 
     return(
         <div>
+            <Alert 
+            isOpen = {alert.status}
+            toggle = {dismissAlert}
+            color={alert.color}>
+                {alert.message}
+            </Alert>
             <h2>Let's talk</h2>
             <Form className="contactForm">
                 <FormGroup>
