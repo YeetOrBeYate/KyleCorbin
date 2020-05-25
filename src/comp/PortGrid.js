@@ -1,11 +1,9 @@
 import React from 'react'
 import PortCard from "./PortCard"
-import Africa from "../img/Africa.png"
-import Country from "../img/Country.png"
+
 import {useSelector,useDispatch} from 'react-redux'
-import {getTags} from "../Actions/TagsActions"
-import {getProjects, filterProject} from "../Actions/PortfolioActions"
-import {Jumbotron, Badge} from "reactstrap"
+import {getProjects} from "../Actions/PortfolioActions"
+
 
 const PortGrid = ()=>{
 

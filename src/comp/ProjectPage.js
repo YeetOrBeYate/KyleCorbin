@@ -2,7 +2,7 @@ import React from 'react'
 import {Button,Jumbotron} from 'reactstrap'
 import {useSelector,useDispatch} from 'react-redux'
 import {getOneProject} from "../Actions/PortfolioActions"
-import Country from "../img/Country.png"
+// import Country from "../img/Country.png"
 
 const ProjectPage = (props)=>{
 

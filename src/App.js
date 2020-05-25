@@ -6,7 +6,7 @@ import Portfolio from './comp/Portfolio'
 import Contact from './comp/Contact'
 import ProjectPage from "./comp/ProjectPage"
 import {Container } from 'reactstrap';
-import {Route,Switch, Router} from "react-router-dom"
+import {Route,Switch} from "react-router-dom"
 
 import './App.css';
 

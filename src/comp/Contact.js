@@ -12,12 +12,12 @@ const Contact = ()=>{
 
 
     const [input,setInput] = React.useState({
-        nameErr:null,
-        name:null,
-        emailErr:null,
-        email:null,
-        phoneErr:null,
-        phone:null
+        nameErr:"",
+        name:"",
+        emailErr:"",
+        email:"",
+        phoneErr:"",
+        phone:""
     })
 
 
@@ -29,35 +29,37 @@ const Contact = ()=>{
     const submitContact = (e)=>{
         e.preventDefault()
 
-        console.log(contact)
-
         let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         let phoneCheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
 
         if(contact.name.length > 2 ===false){
-            setInput({...input, nameErr:true, name:false})
-
+            setInput({...input, nameErr:"0", name:"" })
+            return
         }else{
-            setInput({...input, name:true, nameErr:false})
+            setInput({...input, name:"0", nameErr:""})
+
         }
+
+
 
         if(!emailCheck.test(contact.email)){
-
-            setInput({...input, emailErr:true, email:false})
-
+            setInput({...input, name:"0", nameErr:"", emailErr:"0", email:""})
+            return
         }else{
-            setInput({...input, email:true, emailErr:false})
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:""})
         }
+
+
 
         if(!phoneCheck.test(contact.phone)){
-
-            setInput({...input, phoneErr:true, phone:false})
-
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phoneErr:"0", phone:""})
+            return
         }else{
-            setInput({...input, phone:true, phoneErr:false})
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
         }
 
-        console.log(input)
+        console.log('input', input)
+
     }
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Africa from "../img/Africa.png"
-import Country from "../img/Country.png"
+// import Africa from "../img/Africa.png"
+// import Country from "../img/Country.png"
 import PortGrid from "./PortGrid"
 import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
