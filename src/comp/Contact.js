@@ -1,8 +1,8 @@
 import React from "react"
-import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert} from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, Spinner} from 'reactstrap';
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
-import { ContactReducer } from "../Reducers/Contact";
+
 
 
 const Contact = ()=>{
@@ -13,9 +13,6 @@ const Contact = ()=>{
 
     React.useEffect(()=>{
 
-        if(Contact.loading){
-
-        }
 
         if(Contact.failure){
             setAlert({...alert, status:true, message:'Message was not sent- There might be a network interription, please retry', color:'danger'})
@@ -49,6 +46,7 @@ const Contact = ()=>{
         message:'',
         color:''
     })
+
 
 
     const contactHandle =(e)=>{
@@ -91,6 +89,19 @@ const Contact = ()=>{
 
     const dismissAlert = ()=>{
         setAlert({...alert, status:false, message:''})
+        setInput({
+        nameErr:"",
+        name:"",
+        emailErr:"",
+        email:"",
+        phoneErr:"",
+        phone:""})
+        setContact({
+        name:"",
+        email:"",
+        phone:"",
+        message:""
+        })
     }
 
 
@@ -127,6 +138,14 @@ const Contact = ()=>{
                     <Input type="textarea" id="Message" name="message" value={contact.message} onChange={contactHandle}/>
                 </FormGroup>
                 <Button onClick={submitContact} color="primary">Send</Button>
+                {Contact.loading?
+                 
+                    <Spinner size="m" color="info"></Spinner>
+
+                 :
+
+                    <></>
+                }
             </Form>
         </div>
     )
