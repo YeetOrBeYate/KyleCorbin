@@ -16,11 +16,13 @@ import thunk from "redux-thunk";
 
 import {ProjectReducer} from "./Reducers/Portfolio"
 import {TagsReducer} from "./Reducers/Tags"
+import {ContactReducer} from './Reducers/Contact'
 
 //so far we only have one reducer but I like makeing a combined one just in case
 const rootReducer = combineReducers({
   Projects:ProjectReducer,
-  Tags:TagsReducer
+  Tags:TagsReducer,
+  Contact:ContactReducer
 })
 
 const store = createStore(rootReducer,applyMiddleware(thunk));

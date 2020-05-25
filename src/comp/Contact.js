@@ -1,7 +1,12 @@
 import React from "react"
-import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, InputGroup} from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback} from 'reactstrap';
+import {useSelector,useDispatch} from 'react-redux'
+import {sendContact} from '../Actions/ContactActions'
+
 
 const Contact = ()=>{
+
+    const dispatch = useDispatch()
 
     const [contact, setContact] = React.useState({
         name:"",
@@ -37,7 +42,6 @@ const Contact = ()=>{
             return
         }else{
             setInput({...input, name:"0", nameErr:""})
-
         }
 
 
@@ -56,10 +60,8 @@ const Contact = ()=>{
             return
         }else{
             setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
+            dispatch(sendContact(contact))
         }
-
-        console.log('input', input)
-
     }
 
 
