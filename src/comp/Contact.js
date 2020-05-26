@@ -3,6 +3,8 @@ import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, S
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
 
+import blackman from "../img/BlackMan.jpg"
+
 
 
 const Contact = ()=>{
@@ -147,6 +149,14 @@ const Contact = ()=>{
                     <></>
                 }
             </Form>
+            <div className="contactFlex">
+                <div className="contactText" style={{width:'40%'}}>
+                    <h2>Lets bring your idea to life</h2>
+                </div>
+                <div id="contactPic">
+                    <img src={blackman} alt="Yeet"/>
+                </div>
+            </div>
         </div>
     )
 

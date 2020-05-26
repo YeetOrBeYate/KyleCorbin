@@ -179,6 +179,21 @@
 
 .contactForm{
   text-align: left;
+  /* border:1px solid red; */
+}
+
+.contactFlex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contactPic{
+  width: 40%;
+}
+
+#contactPic img{
+  width: 80%;
 }
 
 .project{
@@ -234,6 +249,14 @@
   }
   
   .homeChild{
+    width: 100%;
+  }
+
+  .contactText{
+    display: none;
+  }
+
+  #contactPic{
     width: 100%;
   }
 
