@@ -91,19 +91,8 @@ const Contact = ()=>{
 
     const dismissAlert = ()=>{
         setAlert({...alert, status:false, message:''})
-        setInput({
-        nameErr:"",
-        name:"",
-        emailErr:"",
-        email:"",
-        phoneErr:"",
-        phone:""})
-        setContact({
-        name:"",
-        email:"",
-        phone:"",
-        message:""
-        })
+        setInput({nameErr:"", name:"", emailErr:"", email:"", phoneErr:"", phone:""})
+        setContact({name:"", email:"", phone:"", message:""})
     }
 
 
