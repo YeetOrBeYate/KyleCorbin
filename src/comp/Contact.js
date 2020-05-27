@@ -76,41 +76,34 @@ const Contact = ()=>{
     const submitContact = (e)=>{
         e.preventDefault()
 
-        // let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        // let phoneCheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        let phoneCheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
 
-        // if(contact.name.length > 2 ===false){
-        //     setInput({...input, nameErr:"0", name:"" })
-        //     return
-        // }else{
-        //     setInput({...input, name:"0", nameErr:""})
-        // }
-
-
-
-        // if(!emailCheck.test(contact.email)){
-        //     setInput({...input, name:"0", nameErr:"", emailErr:"0", email:""})
-        //     return
-        // }else{
-        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:""})
-        // }
-
-
-
-        // if(!phoneCheck.test(contact.phone)){
-        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phoneErr:"0", phone:""})
-        //     return
-        // }else{
-        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
-        //     dispatch(sendContact(contact))
-        // }
-
-        //tests to fail
-
-        let kyle = {
-            name:'name'
+        if(contact.name.length > 2 ===false){
+            setInput({...input, nameErr:"0", name:"" })
+            return
+        }else{
+            setInput({...input, name:"0", nameErr:""})
         }
-        dispatch(sendContact(kyle))
+
+
+
+        if(!emailCheck.test(contact.email)){
+            setInput({...input, name:"0", nameErr:"", emailErr:"0", email:""})
+            return
+        }else{
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:""})
+        }
+
+
+
+        if(!phoneCheck.test(contact.phone)){
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phoneErr:"0", phone:""})
+            return
+        }else{
+            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
+            dispatch(sendContact(contact))
+        }
     }
 
     const dismissAlert = ()=>{
