@@ -42,8 +42,23 @@
   background-color: #7889e8;
 }
 
+
 #quote{
   padding-bottom: 1%;
+}
+
+.footerbar h2::before{
+  content: '\f10d';
+}
+
+.footerbar h2::after{
+  content: '\f10e';
+}
+
+.footerbar h2::before, .footerbar h2::after{
+  font-family: FontAwesome;
+  font-size: 40px;
+  padding: 10px;
 }
 
 .contactIcons{
