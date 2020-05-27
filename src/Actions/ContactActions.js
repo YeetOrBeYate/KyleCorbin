@@ -4,8 +4,8 @@ const loading = ()=>{
     return {type:'contactLoading'}
 }
 
-const failure = ()=>{
-    return {type:'contactFailure'}
+const failure = (data)=>{
+    return {type:'contactFailure', payload:data}
 }
 
 const success =()=>{
@@ -27,7 +27,17 @@ export const sendContact=(body)=>{
 
         .catch(err=>{
 
-            dispatch(failure())
+            if(err.response && err.response.status === 406){
+                console.log('failed with 406')
+                dispatch(failure(406))
+            }else if(err.response && err.response.status === 409){
+                console.log('failed with 409')
+                dispatch(failure(409))
+            }else if(err.response && err.response.status === 401){
+                console.log('failed with 401')
+                dispatch(failure(401))
+            }
+
         })
     }
 }

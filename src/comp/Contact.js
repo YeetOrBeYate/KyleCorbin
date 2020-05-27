@@ -16,15 +16,31 @@ const Contact = ()=>{
     React.useEffect(()=>{
 
 
-        if(Contact.failure){
-            setAlert({...alert, status:true, message:'Message was not sent- There might be a network interription, please retry', color:'danger'})
+        if(Contact.failure && Contact.code){
+
+            if(Contact.code === 406){
+                setAlert({...alert, 
+                status:true,
+                title:'Incorrect format', 
+                message:'There appears to be something wrong with the format. Please clear all fields and retry', color:'danger'})
+            }else if(Contact.code === 409){
+                setAlert({...alert, 
+                status:true,
+                title:'Unable to save contact info', 
+                message:' An error occured, I am unable to save your contact info', color:'danger'})
+            }else{
+                setAlert({...alert, 
+                status:true,
+                title:'Contact info saved', 
+                message:'We have your information saved, but the email service is down. Feel free to message me using info found on my resume', color:'warning'})
+            }
         }
 
         if(Contact.success){
             setAlert({...alert, status:true, message:'Message sent- you should recieve a confirmation email momentarily!', color:'success'})
         }
 
-    }, [Contact.loading, Contact.failure, Contact.success])
+    }, [Contact.loading, Contact.failure, Contact.success, Contact.code])
 
     const [contact, setContact] = React.useState({
         name:"",
@@ -46,6 +62,7 @@ const Contact = ()=>{
     const [alert,setAlert] = React.useState({
         status:false,
         message:'',
+        title:'',
         color:''
     })
 
@@ -59,38 +76,45 @@ const Contact = ()=>{
     const submitContact = (e)=>{
         e.preventDefault()
 
-        let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        let phoneCheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        // let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        // let phoneCheck = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
 
-        if(contact.name.length > 2 ===false){
-            setInput({...input, nameErr:"0", name:"" })
-            return
-        }else{
-            setInput({...input, name:"0", nameErr:""})
+        // if(contact.name.length > 2 ===false){
+        //     setInput({...input, nameErr:"0", name:"" })
+        //     return
+        // }else{
+        //     setInput({...input, name:"0", nameErr:""})
+        // }
+
+
+
+        // if(!emailCheck.test(contact.email)){
+        //     setInput({...input, name:"0", nameErr:"", emailErr:"0", email:""})
+        //     return
+        // }else{
+        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:""})
+        // }
+
+
+
+        // if(!phoneCheck.test(contact.phone)){
+        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phoneErr:"0", phone:""})
+        //     return
+        // }else{
+        //     setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
+        //     dispatch(sendContact(contact))
+        // }
+
+        //tests to fail
+
+        let kyle = {
+            name:'name'
         }
-
-
-
-        if(!emailCheck.test(contact.email)){
-            setInput({...input, name:"0", nameErr:"", emailErr:"0", email:""})
-            return
-        }else{
-            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:""})
-        }
-
-
-
-        if(!phoneCheck.test(contact.phone)){
-            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phoneErr:"0", phone:""})
-            return
-        }else{
-            setInput({...input, name:"0", nameErr:"", email:"0", emailErr:"", phone:"0", phoneErr:""})
-            dispatch(sendContact(contact))
-        }
+        dispatch(sendContact(kyle))
     }
 
     const dismissAlert = ()=>{
-        setAlert({...alert, status:false, message:''})
+        setAlert({...alert, status:false, message:'', title:''})
         setInput({nameErr:"", name:"", emailErr:"", email:"", phoneErr:"", phone:""})
         setContact({name:"", email:"", phone:"", message:""})
     }
@@ -102,6 +126,7 @@ const Contact = ()=>{
             isOpen = {alert.status}
             toggle = {dismissAlert}
             color={alert.color}>
+                <h4 className="alert-heading">{alert.title}</h4>
                 {alert.message}
             </Alert>
             <h2>Let's talk</h2>
