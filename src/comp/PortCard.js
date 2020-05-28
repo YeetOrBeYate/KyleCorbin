@@ -8,7 +8,7 @@ const PortCard = (props)=>{
     return(
 
         <Card>
-            <CardImg top height="50%" width='80%' src={props.pic} alt="yeet"/>
+            <CardImg top  src={props.pic} alt="yeet"/>
             <CardBody>
                 <CardTitle>{props.name}</CardTitle>
                 <CardText>

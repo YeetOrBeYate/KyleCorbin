@@ -1,8 +1,8 @@
 
 
 .App {
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
-
 }
 
 .themed-container{
@@ -45,6 +45,8 @@
 
 #quote{
   padding-bottom: 1%;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .footerbar h2::before{
@@ -189,9 +191,11 @@
   text-align: left;
 }
 
-.form-group{
-  
+.card-img-top{
+  height: 54%;
+  width: 100%;
 }
+
 
 .contactForm{
   text-align: left;
