@@ -5,7 +5,7 @@ import PortGrid from "./PortGrid"
 import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
 import {filterProject} from "../Actions/PortfolioActions"
-import {Jumbotron, Badge} from "reactstrap"
+import {Jumbotron, Badge, Spinner} from "reactstrap"
 const Portfolio = ()=>{
 
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ const Portfolio = ()=>{
     if (Tags.loading){
         return(
             <div>
-                loading...
+                <Spinner color="info" style={{ width: '3rem', height: '3rem' }} type="grow"/>
             </div>
         )
     }

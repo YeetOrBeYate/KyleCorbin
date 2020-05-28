@@ -26,6 +26,7 @@ const FooterBar = ()=>{
         })
     },[])
 
+    // load effect in css
     return(
     <div className="footerbar">
         <div id ="quote">

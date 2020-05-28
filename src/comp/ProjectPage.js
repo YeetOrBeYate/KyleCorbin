@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button,Jumbotron} from 'reactstrap'
+import {Button,Jumbotron,Spinner} from 'reactstrap'
 import {useSelector,useDispatch} from 'react-redux'
 import {getOneProject} from "../Actions/PortfolioActions"
 // import Country from "../img/Country.png"
@@ -20,9 +20,11 @@ const ProjectPage = (props)=>{
     },[props.match.params.id])
 
     if(!Portfolio.single){
-        return(<div>
-            loading....
-        </div>)
+        return(
+            <div>
+                <Spinner color="info" style={{ width: '3rem', height: '3rem' }} type="grow"/>
+            </div>
+        )
     }
 
     return(

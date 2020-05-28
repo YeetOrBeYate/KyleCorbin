@@ -1,5 +1,4 @@
 import React from 'react'
-// import {Navbar, NavbarBrand, NavbarToggler} from 'reactstrap'
 import {
     Collapse,
     Navbar,
@@ -9,7 +8,7 @@ import {
     NavItem,
     NavLink,
   } from 'reactstrap';
-  import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const NavBarcomp = ()=>{
 

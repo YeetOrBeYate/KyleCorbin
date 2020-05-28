@@ -1,6 +1,6 @@
 import React from 'react'
 import PortCard from "./PortCard"
-
+import {Spinner} from 'reactstrap';
 import {useSelector,useDispatch} from 'react-redux'
 import {getProjects} from "../Actions/PortfolioActions"
 
@@ -18,7 +18,7 @@ const PortGrid = ()=>{
     if (Portfolio.loading){
         return(
             <div>
-                loading...
+                <Spinner color="info" style={{ width: '3rem', height: '3rem' }} type="grow"/>
             </div>
         )
     }
