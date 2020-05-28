@@ -23,8 +23,12 @@
 
 @keyframes stick{
   0% {
-    border-bottom: 2px solid black;
+    border: 3px solid white;
     padding: 1.5%;
+  }
+
+  50%{
+    border: .5px solid white;
   }
   100%{
     border:none;
@@ -40,8 +44,7 @@
   width:100%;
   padding: 1% ;
   animation-name: stick;
-  animation-duration: .5s;
-  /* transition: padding .5s; */
+  animation-duration: .7s;
   z-index: 3;
 }
 
@@ -75,6 +78,16 @@
   font-family: FontAwesome;
   font-size: 40px;
   padding: 10px;
+}
+
+.stackHold{
+  display: flex;
+  justify-content: space-around;
+  width:80%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 5px;
+  padding: .5% 0;
 }
 
 .contactIcons{
