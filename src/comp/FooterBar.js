@@ -10,12 +10,14 @@ const FooterBar = ()=>{
     })
 
     React.useEffect(()=>{
-        return axios.get('https://quotes.rest/qod?category=inspire&language=en')
+        return axios.get('http://localhost:4000/quote')
 
         .then(res=>{
-            console.log(res.data.contents.quotes[0])
-            let content = res.data.contents.quotes[0]
-            setQoute({...qoute, string:content.quote, author:content.author})
+            console.log(res.data)
+            let content = res.data
+            setQoute({...qoute, 
+                string:content.line, 
+                author:content.author})
         })
 
         .catch(err=>{
