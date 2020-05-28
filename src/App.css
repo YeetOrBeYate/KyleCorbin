@@ -14,24 +14,38 @@
 
 .navbar{
   padding: 1.5%;
+  /* border:1px solid red; */
+}
+
+.scrolly{
+  display: none;
+}
+
+@keyframes stick{
+  0% {
+    border-bottom: 2px solid black;
+    padding: 1.5%;
+  }
+  100%{
+    border:none;
+    padding: 1%;
+  }
 }
 
 
 .sticky{
+  display: flex;
   position: fixed;
   top:0;
   width:100%;
-  padding: .5% ;
-  transition: padding .7s;
+  padding: 1% ;
+  animation-name: stick;
+  animation-duration: .5s;
+  /* transition: padding .5s; */
   z-index: 3;
 }
 
-.fakeNav{
-  height: 95.2px;
-  padding: 2.5%;
-  display: none;
-  transition: padding .7s;
-}
+
 .visible{
   display: block;
 }
