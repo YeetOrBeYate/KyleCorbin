@@ -8,38 +8,32 @@ import ProjectPage from "./comp/ProjectPage"
 import {Container } from 'reactstrap';
 import {Route,Switch} from "react-router-dom"
 
+import {useSelector,useDispatch} from 'react-redux'
+
 import './App.css';
 
 function App() {
+
+  
+  const dispatch = useDispatch()
+
+  const Portfoliostore = useSelector(state=>state.Projects)
 
 
 
 
   return (
     <div className="App">
-      {/* <css-doodle>{`
-      :doodle {
-        @grid: 5x5;
-        @size:99vmax;
-        grid-gap: 1px;
-      }
-      width: @rand(5%, 100%);
-      background: #26c6da;
-      `}    
-    </css-doodle> */}
       <NavBarcomp/>
-      <Container className="themed-container" fluid="sm">
-        <Switch>
-          <Route path="/portfolio" component={Portfolio}/>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/project/:id" component={ProjectPage}/>
-          <Route path='/' component={Home}/>
-        </Switch>
-      </Container>
+        <Container className="themed-container" fluid="sm">
+          <Switch>
+            <Route path="/portfolio" component={Portfolio}/>
+            <Route path="/contact" component={Contact}/>
+            <Route path="/project/:id" component={ProjectPage}/>
+            <Route path='/' component={Home}/>
+          </Switch>
+        </Container>
       <FooterBar/>
-      <div className="holder">
-        holder
-      </div>
     </div>
   );
 }
