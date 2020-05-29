@@ -21,7 +21,7 @@ export const getProjects = ()=>{
     return function(dispatch){
 
         dispatch(loading())
-        return axios.get(`http://localhost:4000/projects`)
+        return axios.get(`https://kyle-portfolio-be.herokuapp.com/projects`)
 
         .then(res=>{
             dispatch(success(res.data.projects))
@@ -38,7 +38,7 @@ export const getOneProject = (id)=>{
 
         dispatch(singleLoading())
 
-        return axios.get(`http://localhost:4000/projects/${id}`)
+        return axios.get(`https://kyle-portfolio-be.herokuapp.com/projects/${id}`)
 
         .then(res=>{
             dispatch(singleSuccess(res.data))
@@ -55,7 +55,7 @@ export const filterProject = (tagId)=>{
 
         dispatch(loading())
 
-        return axios.get(`http://localhost:4000/tags/${tagId}`)
+        return axios.get(`https://kyle-portfolio-be.herokuapp.com/tags/${tagId}`)
 
         .then(res=>{
             dispatch(success(res.data.projects))

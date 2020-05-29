@@ -17,7 +17,7 @@ export const getTags = ()=>{
 
         dispatch(loading())
 
-        return axios.get(`http://localhost:4000/tags`)
+        return axios.get(`https://kyle-portfolio-be.herokuapp.com/tags`)
 
             .then(res=>{
                 dispatch(success(res.data.tags))

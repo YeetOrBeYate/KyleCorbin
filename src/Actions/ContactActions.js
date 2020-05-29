@@ -18,7 +18,7 @@ export const sendContact=(body)=>{
     return function(dispatch){
 
         dispatch(loading())
-        axios.post(`http://localhost:4000/contact`, body)
+        axios.post(`https://kyle-portfolio-be.herokuapp.com/contact`, body)
 
         .then(res=>{
             console.log(res.data)

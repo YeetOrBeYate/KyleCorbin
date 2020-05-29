@@ -16,7 +16,7 @@ const FooterBar = ()=>{
     })
 
     React.useEffect(()=>{
-        return axios.get('http://localhost:4000/quote')
+        return axios.get('https://kyle-portfolio-be.herokuapp.com/quote')
 
         .then(res=>{
             console.log(res.data)

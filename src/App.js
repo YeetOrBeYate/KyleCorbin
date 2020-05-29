@@ -17,6 +17,16 @@ function App() {
 
   return (
     <div className="App">
+      {/* <css-doodle>{`
+      :doodle {
+        @grid: 5x5;
+        @size:99vmax;
+        grid-gap: 1px;
+      }
+      width: @rand(5%, 100%);
+      background: #26c6da;
+      `}    
+    </css-doodle> */}
       <NavBarcomp/>
       <Container className="themed-container" fluid="sm">
         <Switch>
@@ -27,6 +37,9 @@ function App() {
         </Switch>
       </Container>
       <FooterBar/>
+      <div className="holder">
+        holder
+      </div>
     </div>
   );
 }
