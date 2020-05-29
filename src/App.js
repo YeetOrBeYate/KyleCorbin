@@ -31,10 +31,10 @@ function App() {
   return (
     <div className="App">
       <NavBarcomp/>
-      <div style={{height:'420px'}} onClick={()=>updateDoodle()}>
+      {/* <div style={{height:'420px'}} onClick={()=>updateDoodle()}>
         <css-doodle>{`
             :doodle {
-              @grid: 18 ;
+              @grid: 6 ;
               background: #0a0c27;
               width:100%;
               height:100%
@@ -51,28 +51,24 @@ function App() {
             ));
           `}  
           </css-doodle>
-      </div>
+      </div> */}
         <div className="containFlex">
           <div className="test">
-          {/* <css-doodle>{`
+          <css-doodle>{`
             :doodle {
-              @grid: 18 ;
+              @grid: 6x4;
               background: #0a0c27;
               width:100%;
               height:100%
             }
-            --hue: calc(180 + 1.5 * @row * @col);
-            background: hsl(var(--hue), 50%, 70%);
-            margin: -.5px;
-            transition: @r(.5s) ease;
-            clip-path: polygon(@pick(
-              '0 0, 100% 0, 100% 100%',
-              '0 0, 100% 0, 0 100%',
-              '0 0, 100% 100%, 0 100%',
-              '100% 0, 100% 100%, 0 100%'
-            ));
+            background: rgba(96, 86, 158, @rand(.9));
+            transition: .2s ease @rand(200ms);
+            transform: rotate(@rand(360deg));
+            clip-path: polygon(
+              @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
+            );
           `}  
-          </css-doodle> */}
+          </css-doodle>
           </div>
           <Container className="themed-container" fluid="sm">
             <Switch>
@@ -83,25 +79,21 @@ function App() {
             </Switch>
           </Container>
           <div className="test">
-          {/* <css-doodle>{`
-            :doodle {
-              @grid: 18 ;
-              background: #0a0c27;
-              width:100%;
-              height:100%
-            }
-            --hue: calc(180 + 1.5 * @row * @col);
-            background: hsl(var(--hue), 50%, 70%);
-            margin: -.5px;
-            transition: @r(.5s) ease;
-            clip-path: polygon(@pick(
-              '0 0, 100% 0, 100% 100%',
-              '0 0, 100% 0, 0 100%',
-              '0 0, 100% 100%, 0 100%',
-              '100% 0, 100% 100%, 0 100%'
-            ));
+          <css-doodle>{`
+              :doodle {
+                @grid: 6x4;
+                background: #0a0c27;
+                width:100%;
+                height:100%
+              }
+              background: rgba(96, 86, 158, @rand(.9));
+              transition: .2s ease @rand(200ms);
+              transform: rotate(@rand(360deg));
+              clip-path: polygon(
+                @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
+              );
           `}  
-          </css-doodle> */}
+          </css-doodle>
           </div>
         </div>
       <FooterBar/>
