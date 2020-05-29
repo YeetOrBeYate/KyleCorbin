@@ -12,14 +12,14 @@
   display: flex;
 }
 
-.containFlex .test{
+.containFlex .display{
   flex-grow: .50;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-.test{
-  background:coral;
+.display:hover{
+  cursor: pointer;
 }
 
 
@@ -325,6 +325,10 @@
 
   #contactPic{
     width: 100%;
+  }
+
+  .stackHold{
+    width: 90%;
   }
 
   

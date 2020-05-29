@@ -20,9 +20,11 @@ function App() {
   const Portfoliostore = useSelector(state=>state.Projects)
 
   const updateDoodle=()=>{
-    let doodle = document.querySelector('css-doodle');
+    let doodles = document.querySelectorAll('css-doodle');
 
-    doodle.update();
+    doodles.forEach((doodle)=>{
+      doodle.update()
+    })
   }
 
 
@@ -31,29 +33,8 @@ function App() {
   return (
     <div className="App">
       <NavBarcomp/>
-      {/* <div style={{height:'420px'}} onClick={()=>updateDoodle()}>
-        <css-doodle>{`
-            :doodle {
-              @grid: 6 ;
-              background: #0a0c27;
-              width:100%;
-              height:100%
-            }
-            --hue: calc(180 + 1.5 * @row * @col);
-            background: hsl(var(--hue), 50%, 70%);
-            margin: -.5px;
-            transition: @r(.5s) ease;
-            clip-path: polygon(@pick(
-              '0 0, 100% 0, 100% 100%',
-              '0 0, 100% 0, 0 100%',
-              '0 0, 100% 100%, 0 100%',
-              '100% 0, 100% 100%, 0 100%'
-            ));
-          `}  
-          </css-doodle>
-      </div> */}
         <div className="containFlex">
-          <div className="test">
+          <div className="display" onClick={()=>updateDoodle()}>
           <css-doodle>{`
             :doodle {
               @grid: 6x4;
@@ -61,7 +42,7 @@ function App() {
               width:100%;
               height:100%
             }
-            background: rgba(96, 86, 158, @rand(.9));
+            background: rgba(120, 137, 232, @rand(.9));
             transition: .2s ease @rand(200ms);
             transform: rotate(@rand(360deg));
             clip-path: polygon(
@@ -78,7 +59,7 @@ function App() {
               <Route path='/' component={Home}/>
             </Switch>
           </Container>
-          <div className="test">
+          <div className="display" onClick={()=>updateDoodle()}>
           <css-doodle>{`
               :doodle {
                 @grid: 6x4;
@@ -86,7 +67,7 @@ function App() {
                 width:100%;
                 height:100%
               }
-              background: rgba(96, 86, 158, @rand(.9));
+              background: rgba(120, 137, 232, @rand(.9));
               transition: .2s ease @rand(200ms);
               transform: rotate(@rand(360deg));
               clip-path: polygon(
