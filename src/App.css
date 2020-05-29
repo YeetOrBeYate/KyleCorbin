@@ -3,14 +3,27 @@
 .App {
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
-  background-image: url(https://images.unsplash.com/photo-1463428537233-c84b754b2c84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+}
+
+
+
+.containFlex{
+  display: flex;
+}
+
+.containFlex .test{
+  flex-grow: .50;
+}
+
+.test{
+  background:coral;
 }
 
 
 .themed-container{
   border:.1px solid transparent;
   box-shadow: 0px 0px 3px 1px #888888;
-  margin: 1% auto;
+  margin: 1% 0;
   min-height: 762px;
   background: white;
 }
@@ -59,6 +72,8 @@
   padding-top: 3%;
   height: 300px;
   background-color: #7889e8;
+  position: relative;
+
 }
 
 
