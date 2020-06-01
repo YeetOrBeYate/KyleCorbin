@@ -38,7 +38,7 @@ const NavBarcomp = ()=>{
                         <Link className="nav-link" to="/portfolio">Portfolio</Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit">Resume</NavLink>
+                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing">Resume</NavLink>
                     </NavItem>
                     <NavItem>
                         <Link className="nav-link" to="/contact">Contact</Link>
