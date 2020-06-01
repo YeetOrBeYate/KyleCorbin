@@ -15,9 +15,6 @@ import './App.css';
 function App() {
 
   
-  const dispatch = useDispatch()
-
-  const Portfoliostore = useSelector(state=>state.Projects)
 
   const updateDoodle=()=>{
     let doodles = document.querySelectorAll('css-doodle');
@@ -30,12 +27,38 @@ function App() {
 
 
 
+
   return (
     <div className="App">
       <NavBarcomp/>
-        <div className="containFlex">
-          <div className="display" onClick={()=>updateDoodle()}>
-          <css-doodle>{`
+      <div className="containFlex">
+        <div className="display" onClick={()=>updateDoodle()}>
+        <css-doodle>{`
+          :doodle {
+            @grid: 6x4;
+            background: #0a0c27;
+            width:100%;
+            height:100%
+          }
+          background: rgba(120, 137, 232, @rand(.9));
+          transition: .2s ease @rand(200ms);
+          transform: rotate(@rand(360deg));
+          clip-path: polygon(
+            @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
+          );
+        `}  
+        </css-doodle>
+        </div>
+        <Container className="themed-container" fluid="sm">
+          <Switch>
+            <Route path="/portfolio" component={Portfolio}/>
+            <Route path="/contact" component={Contact}/>
+            <Route path="/project/:id" component={ProjectPage}/>
+            <Route path='/' component={Home}/>
+          </Switch>
+        </Container>
+        <div className="display" onClick={()=>updateDoodle()}>
+        <css-doodle>{`
             :doodle {
               @grid: 6x4;
               background: #0a0c27;
@@ -48,35 +71,10 @@ function App() {
             clip-path: polygon(
               @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
             );
-          `}  
-          </css-doodle>
-          </div>
-          <Container className="themed-container" fluid="sm">
-            <Switch>
-              <Route path="/portfolio" component={Portfolio}/>
-              <Route path="/contact" component={Contact}/>
-              <Route path="/project/:id" component={ProjectPage}/>
-              <Route path='/' component={Home}/>
-            </Switch>
-          </Container>
-          <div className="display" onClick={()=>updateDoodle()}>
-          <css-doodle>{`
-              :doodle {
-                @grid: 6x4;
-                background: #0a0c27;
-                width:100%;
-                height:100%
-              }
-              background: rgba(120, 137, 232, @rand(.9));
-              transition: .2s ease @rand(200ms);
-              transform: rotate(@rand(360deg));
-              clip-path: polygon(
-                @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
-              );
-          `}  
-          </css-doodle>
-          </div>
+        `}  
+        </css-doodle>
         </div>
+      </div>
       <FooterBar/>
     </div>
   );

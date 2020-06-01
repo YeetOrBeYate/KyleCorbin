@@ -2,12 +2,14 @@ import React from "react"
 import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, Spinner, UncontrolledTooltip} from 'reactstrap';
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
-
+import useBanner from "../hooks/banner"
 import blackman from "../img/BlackMan.jpg"
 
 
 
 const Contact = ()=>{
+
+    useBanner()
 
     const dispatch = useDispatch()
 

@@ -16,10 +16,9 @@ const FooterBar = ()=>{
     })
 
     React.useEffect(()=>{
-        return axios.get('https://kyle-portfolio-be.herokuapp.com/quote')
+        axios.get('https://kyle-portfolio-be.herokuapp.com/quote')
 
         .then(res=>{
-            console.log(res.data)
             let content = res.data
             setQoute({...qoute, 
                 string:content.line, 
@@ -27,7 +26,7 @@ const FooterBar = ()=>{
         })
 
         .catch(err=>{
-            console.log(err)
+
             setQoute({...qoute, string:'Quote api limit reached', author:"sorry :("})
         })
     },[])

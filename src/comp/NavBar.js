@@ -12,6 +12,7 @@ import {Link} from 'react-router-dom'
 
 const NavBarcomp = ()=>{
 
+
     const toggleNav = ()=>{
         setIsOpen(!isOpen)
     }
