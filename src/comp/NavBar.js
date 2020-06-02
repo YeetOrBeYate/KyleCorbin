@@ -36,13 +36,13 @@ const NavBarcomp = ()=>{
             <Collapse isOpen = {isOpen} navbar>
                 <Nav navbar>
                     <NavItem>
-                        <Link className="nav-link" to="/portfolio">Portfolio</Link>
+                        <Link  className="nav-link" to="/portfolio">Portfolio</Link>
                     </NavItem>
                     <NavItem>
                         <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing">Resume</NavLink>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/contact">Contact</Link>
+                        <Link  className="nav-link" to="/contact">Contact</Link>
                     </NavItem>
                 </Nav>
             </Collapse>

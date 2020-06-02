@@ -1,7 +1,5 @@
 import React from 'react';
 import { Media} from 'reactstrap';
-
-import useBanner from "../hooks/banner"
 import self from "../img/profSelf.jpeg"
 import '../App.css';
 
