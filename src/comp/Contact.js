@@ -2,14 +2,13 @@ import React from "react"
 import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, Spinner, UncontrolledTooltip} from 'reactstrap';
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
-import useBanner from "../hooks/banner"
+import Banner from "../hooks/banner"
 import blackman from "../img/BlackMan.jpg"
 
 
 
 const Contact = ()=>{
 
-    useBanner()
 
     const dispatch = useDispatch()
 
@@ -17,6 +16,9 @@ const Contact = ()=>{
 
     React.useEffect(()=>{
 
+
+        Banner('contact')
+        
 
         if(Contact.failure && Contact.code){
 
@@ -53,12 +55,12 @@ const Contact = ()=>{
 
 
     const [input,setInput] = React.useState({
-        nameErr:"",
-        name:"",
-        emailErr:"",
-        email:"",
-        phoneErr:"",
-        phone:""
+        nameErr:false,
+        name:false,
+        emailErr:false,
+        email:false,
+        phoneErr:false,
+        phone:false
     })
 
     const [alert,setAlert] = React.useState({

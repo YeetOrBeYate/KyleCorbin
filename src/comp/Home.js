@@ -7,8 +7,6 @@ import '../App.css';
 
 const Home=()=>{
 
-    useBanner()
-
 
 
     return(

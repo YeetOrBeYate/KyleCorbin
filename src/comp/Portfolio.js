@@ -1,6 +1,6 @@
 import React from 'react'
 import PortGrid from "./PortGrid"
-import useBanner from "../hooks/banner"
+import Banner from "../hooks/banner"
 
 import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
@@ -8,14 +8,19 @@ import {filterProject} from "../Actions/PortfolioActions"
 import {Jumbotron, Badge, Spinner} from "reactstrap"
 const Portfolio = ()=>{
 
-    useBanner()
+    
 
     const dispatch = useDispatch()
 
     const Tags = useSelector(state=>state.Tags)
 
     React.useEffect(()=>{
+        
+        
+        Banner('portfolio')
+        
         dispatch(getTags())
+
     },[])
 
     const [load,setLoad] = React.useState(true)
