@@ -12,9 +12,11 @@ const PortCard = (props)=>{
             <CardBody>
                 <CardTitle>{props.name}</CardTitle>
                 <CardText>
-                    {props.tags.map((tag,index)=>(
-                        <Badge key={index} color="secondary">{tag.name}</Badge>
-                    ))}
+                    {props.tags.map((tag,index)=>{
+                        if(tag.name !== "Show all"){
+                            return <Badge key={index} color="secondary">{tag.name}</Badge>
+                        }
+                    })}
                 </CardText>
                 <Link to={`/project/${props.id}`}>
                     <Button color="info">More info...</Button>
