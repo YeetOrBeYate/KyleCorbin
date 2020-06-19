@@ -55,9 +55,12 @@ const ProjectPage = (props)=>{
                 <h1>Technology used</h1>
                 <hr></hr>
                 <ul>
-                    {Project.tags.map((tag,index)=>(
-                        <li key={index}>{tag.name}</li>
-                    ))}
+                    {Project.tags.map((tag,index)=>{
+                        if(tag.name !== "Show all"){
+
+                            return <li key={index}>{tag.name}</li>
+                        }
+                    })}
                 </ul>
             </section>
         </div>
