@@ -7,7 +7,6 @@ import {
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption
   } from 'reactstrap';
 
 const ProjectPage = (props)=>{
@@ -31,12 +30,45 @@ const ProjectPage = (props)=>{
     const [animating, setAnimating] = React.useState(false);
 
     const next = ()=>{
+        // if we're animation get out of the function Now!
         if(animating){
             return
         }
         
+        let nextIndex = null
 
+        if(activeIndex === Project.pictures.length - 1){
+            nextIndex = 0
+        }else{
+            nextIndex = activeIndex + 1
+        }
+
+        setActiveIndex(nextIndex)
         
+    }
+
+    const previous = ()=>{
+        // if we're animation get out of the function Now!
+        if(animating){
+            return
+        }
+
+        let nextIndex = null
+
+        if(activeIndex === 0){
+            nextIndex = Project.pictures.length -1
+        }else{
+            nextIndex = activeIndex -1
+        }
+        setActiveIndex(nextIndex)
+    }
+
+    const goToIndex = (index)=>{
+        // if we're animation get out of the function Now!
+        if(animating){
+            return
+        }
+        setActiveIndex(index)
     }
     
     
@@ -52,7 +84,6 @@ const ProjectPage = (props)=>{
 
     return(
         <div className="project">
-        {console.log(Portfolio.single)}
             <Jumbotron>
                 <h1>{Project.name}</h1>
                 <p>{Project.description}</p>
@@ -68,7 +99,27 @@ const ProjectPage = (props)=>{
                 </div>
             </Jumbotron>
             <div className="projectImage">
-                <img src={Project.picture}  alt="yeet"/>
+                <Carousel
+                    activeIndex={activeIndex}
+                    next={next}
+                    previous={previous}
+                >
+                    <CarouselIndicators items={Project.pictures} activeIndex={activeIndex} onClickHandler={goToIndex}/>
+                        {Project.pictures.map((pic,index)=>{
+                            return(
+                                <CarouselItem
+                                    onExiting={()=>setAnimating(true)}
+                                    onExited={()=>setAnimating(false)}
+                                    key={index}
+                                >
+                                    <img src={pic.picture} alt="yeet"/>
+
+                                </CarouselItem>
+                            )
+                        })}
+                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous}/>
+                        <CarouselControl direction="next" directionText="Next" onClickHandler={next}/>
+                </Carousel>
             </div>
             <section className="projectSection">
                 <h1>About this project</h1>
