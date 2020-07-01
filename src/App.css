@@ -295,11 +295,22 @@
 }
 
 .projectImage img{
-  width:87.5%;
+  /* width:87.5%; */
+  width: 100%;
 }
 
 .projectSection{
   padding: 2rem 2rem;
+}
+
+.caroeselBackground{
+  background-color: rgba(50, 50, 50, .2);
+
+}
+
+.carouselHover:hover{
+  box-shadow: 0px 0px 2px 1px black;
+
 }
 
 #gitLinks a{
