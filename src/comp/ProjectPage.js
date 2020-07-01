@@ -2,21 +2,45 @@ import React from 'react'
 import {Button,Jumbotron,Spinner} from 'reactstrap'
 import {useSelector,useDispatch} from 'react-redux'
 import {getOneProject} from "../Actions/PortfolioActions"
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+  } from 'reactstrap';
 
 const ProjectPage = (props)=>{
 
-
+    //we need dispact and out global state
     const dispatch = useDispatch()
-
     const Portfolio = useSelector(state=>state.Projects)
-
+    //this is the object in state that the file needs
     let Project = Portfolio.single
-    
-    React.useEffect(()=>{
 
+    // Component did mount lifecycle to make the get request
+    // Also using the component did update to make another request when the url changes
+    React.useEffect(()=>{
+        
         dispatch(getOneProject(props.match.params.id))
         
     },[props.match.params.id])
+
+    //local states controlling the carosel
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const [animating, setAnimating] = React.useState(false);
+
+    const next = ()=>{
+        if(animating){
+            return
+        }
+        
+
+        
+    }
+    
+    
+    
 
     if(!Portfolio.single){
         return(

@@ -7,7 +7,7 @@ const initialState = {
 
     singleLoading:false,
     singleFailure:false,
-    single:null,
+    single:null
 }
 
 export const ProjectReducer = (state = initialState, action)=>{
