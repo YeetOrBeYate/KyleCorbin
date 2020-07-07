@@ -122,7 +122,7 @@ const Contact = ()=>{
                 {alert.message}
             </Alert>
             <h2>Let's talk</h2>
-            <Form className="contactForm">
+            <Form onSubmit={submitContact} className="contactForm">
                 <FormGroup>
                     <Label for='Name'>Name</Label>
                     <Input invalid={input.nameErr} valid={input.name} type='text' name='name' id="Name" value={contact.name} onChange={contactHandle}/>
