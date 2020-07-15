@@ -113,7 +113,7 @@ const Contact = ()=>{
 
 
     return(
-        <div>
+        <div className="homeLoad">
             <Alert 
             isOpen = {alert.status}
             toggle = {dismissAlert}

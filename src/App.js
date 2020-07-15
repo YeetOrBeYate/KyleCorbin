@@ -11,6 +11,7 @@ import {Route,Switch} from "react-router-dom"
 import {useSelector,useDispatch} from 'react-redux'
 
 import './App.css';
+import "./Animations/page.css"
 
 function App() {
 

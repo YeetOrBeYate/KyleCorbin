@@ -2,13 +2,14 @@ import React from 'react';
 import { Media} from 'reactstrap';
 import self from "../img/profSelf.jpeg"
 import '../App.css';
+import "../Animations/page.css"
 
-const Home=()=>{
+const Home=(props)=>{
 
 
 
     return(
-    <div>
+    <div className="homeLoad">
         <Media>
             <Media left={true}>
                 <Media object src={self} alt = "self"/>
