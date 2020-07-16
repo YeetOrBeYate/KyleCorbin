@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const pageDirection = (type, dir) => {
 
@@ -21,5 +20,13 @@ export const pageDirection = (type, dir) => {
             return "homeLoad"
     }
 }
+
+export const updateDoodle=()=>{
+    let doodles = document.querySelectorAll('css-doodle');
+
+    doodles.forEach((doodle)=>{
+      doodle.update()
+    })
+  }
 
 

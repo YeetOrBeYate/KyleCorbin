@@ -7,8 +7,8 @@ import Contact from './comp/Contact'
 import ProjectPage from "./comp/ProjectPage"
 import {Container } from 'reactstrap';
 import {Route,Switch} from "react-router-dom"
+import {updateDoodle} from "./Util/Utils"
 
-import {useSelector,useDispatch} from 'react-redux'
 
 import './App.css';
 import "./Animations/page.css"
@@ -17,13 +17,6 @@ function App() {
 
   
 
-  const updateDoodle=()=>{
-    let doodles = document.querySelectorAll('css-doodle');
-
-    doodles.forEach((doodle)=>{
-      doodle.update()
-    })
-  }
 
   return (
     <div className="App">

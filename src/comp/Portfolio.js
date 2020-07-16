@@ -4,19 +4,12 @@ import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
 import {filterProject} from "../Actions/PortfolioActions"
 import {Jumbotron, Badge, Spinner} from "reactstrap"
-import {pageDirection} from "../Util/Utils"
+import {updateDoodle} from "../Util/Utils"
 
 const Portfolio = (props)=>{
 
 
-    let from = "from"
 
-    if(!props.location.state){
-         from = "notAvailable"
-    }
-    else{
-         from = props.location.state.from 
-    }
 
     const dispatch = useDispatch()
 
@@ -24,6 +17,7 @@ const Portfolio = (props)=>{
 
     React.useEffect(()=>{
         dispatch(getTags())
+        updateDoodle()
     },[])
 
     const [load,setLoad] = React.useState(true)
@@ -70,7 +64,7 @@ const Portfolio = (props)=>{
     
 
     return(
-        <div className={pageDirection("portfolio",from)}>
+        <div>
             <Jumbotron>
                 <h1>Web Developer Portfolio</h1>
                 <p>Full Stack, and Front end. I've used React/Redux, Node.js/Express.js,

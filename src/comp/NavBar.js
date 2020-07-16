@@ -8,7 +8,6 @@ import {
     NavItem,
     NavLink,
   } from 'reactstrap';
-import {useLocation} from 'react-router-dom'
 import MyLink from "./MyLink"
 
 const NavBarcomp = ()=>{

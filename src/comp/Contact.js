@@ -3,27 +3,22 @@ import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, S
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
 import blackman from "../img/BlackMan.jpg"
-import {pageDirection} from "../Util/Utils"
+import {updateDoodle} from "../Util/Utils"
 
 
 
 const Contact = (props)=>{
 
 
-    let from = "from"
 
-    if(!props.location.state){
-         from = "notAvailable"
-    }
-    else{
-         from = props.location.state.from 
-    }
 
     const dispatch = useDispatch()
 
     const Contact = useSelector(state=>state.Contact)
 
     React.useEffect(()=>{
+
+        updateDoodle()
 
         if(Contact.failure && Contact.code){
 
@@ -123,7 +118,7 @@ const Contact = (props)=>{
 
 
     return(
-        <div className={` contactPage ${pageDirection("contact", from)}`}>
+        <div className={`contactPage`}>
             <Alert 
             isOpen = {alert.status}
             toggle = {dismissAlert}

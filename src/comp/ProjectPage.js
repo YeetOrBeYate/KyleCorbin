@@ -3,6 +3,8 @@ import CarouselUnit from "./Carousel"
 import {Button,Jumbotron,Spinner} from 'reactstrap'
 import {useSelector,useDispatch} from 'react-redux'
 import {getOneProject} from "../Actions/PortfolioActions"
+import {updateDoodle} from "../Util/Utils"
+
 
 
 const ProjectPage = (props)=>{
@@ -16,6 +18,8 @@ const ProjectPage = (props)=>{
     // Component did mount lifecycle to make the get request
     // Also using the component did update to make another request when the url changes
     React.useEffect(()=>{
+
+        updateDoodle()
         
         dispatch(getOneProject(props.match.params.id))
         
