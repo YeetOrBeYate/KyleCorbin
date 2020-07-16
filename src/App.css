@@ -271,7 +271,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  animation: load 1s;
+  margin-top: 10%;
 }
 
 #contactPic{
@@ -349,8 +349,11 @@
     width: 100%;
   }
 
-  .contactText{
-    display: none;
+
+
+  .contactFlex{
+    flex-direction: column;
+    margin-top: 20%;
   }
 
   #contactPic{
@@ -368,8 +371,16 @@
   .portGrid{
     display: flex;
     flex-direction: column;
-
   }
+
+  .themed-container{
+    min-height: 762px;
+  }
+
+ .contactFlex{
+   margin-top: 2%;
+ }
+
 }
 
 
@@ -381,6 +392,14 @@
 
   .portGrid .card{
     width:90%;
+  }
+
+  .themed-container{
+    min-height: 762px;
+  }
+
+  .contactFlex{
+    margin-top: 0%;
   }
 }
 
