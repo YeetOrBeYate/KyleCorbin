@@ -10,7 +10,15 @@ import {pageDirection} from "../Util/Utils"
 const Contact = (props)=>{
 
 
-    let from = props.location.state.from
+    let from = "from"
+
+    if(!props.location.state){
+         from = "notAvailable"
+    }
+    else{
+         from = props.location.state.from 
+    }
+
     const dispatch = useDispatch()
 
     const Contact = useSelector(state=>state.Contact)
@@ -115,7 +123,7 @@ const Contact = (props)=>{
 
 
     return(
-        <div className={pageDirection("contact", from)}>
+        <div className={` contactPage ${pageDirection("contact", from)}`}>
             <Alert 
             isOpen = {alert.status}
             toggle = {dismissAlert}

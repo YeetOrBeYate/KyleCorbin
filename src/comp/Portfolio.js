@@ -9,8 +9,14 @@ import {pageDirection} from "../Util/Utils"
 const Portfolio = (props)=>{
 
 
+    let from = "from"
 
-    let from = props.location.state.from
+    if(!props.location.state){
+         from = "notAvailable"
+    }
+    else{
+         from = props.location.state.from 
+    }
 
     const dispatch = useDispatch()
 

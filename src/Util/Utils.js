@@ -15,6 +15,8 @@ export const pageDirection = (type, dir) => {
         case "contact":
             if(dir==="/portfolio"){
                 return "leftLoad"
+            }else if(dir === "/"){
+                return "leftLoad"
             }
             return "homeLoad"
     }

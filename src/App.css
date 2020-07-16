@@ -25,7 +25,7 @@
   border:.1px solid transparent;
   box-shadow: 0px 0px 3px 1px #888888;
   margin: 1% 0;
-  min-height: 762px;
+  min-height: 1257.57px;
   background: white;
 }
 
@@ -254,6 +254,10 @@
 .card-img-top{
   height: 54%;
   width: 100%;
+}
+
+.contactPage{
+  margin-top: 5.5%;
 }
 
 
