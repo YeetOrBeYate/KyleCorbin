@@ -4,6 +4,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {getTags} from "../Actions/TagsActions"
 import {filterProject} from "../Actions/PortfolioActions"
 import {Jumbotron, Badge, Spinner} from "reactstrap"
+import {pageDirection} from "../Util/Utils"
 
 const Portfolio = (props)=>{
 
@@ -60,16 +61,10 @@ const Portfolio = (props)=>{
 
     }
 
-    const pageLoadDirection=(dir)=>{
-        if(dir === "/"){
-            return "rightLoad"
-        }else{
-            return "homeLoad"
-        }
-    }
+    
 
     return(
-        <div className={pageLoadDirection(from)}>
+        <div className={pageDirection("portfolio",from)}>
             <Jumbotron>
                 <h1>Web Developer Portfolio</h1>
                 <p>Full Stack, and Front end. I've used React/Redux, Node.js/Express.js,

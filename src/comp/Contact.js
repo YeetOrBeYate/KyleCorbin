@@ -3,12 +3,14 @@ import { Form, FormGroup, Label, Input, Button, FormText, FormFeedback, Alert, S
 import {useSelector,useDispatch} from 'react-redux'
 import {sendContact} from '../Actions/ContactActions'
 import blackman from "../img/BlackMan.jpg"
+import {pageDirection} from "../Util/Utils"
 
 
 
-const Contact = ()=>{
+const Contact = (props)=>{
 
 
+    let from = props.location.state.from
     const dispatch = useDispatch()
 
     const Contact = useSelector(state=>state.Contact)
@@ -113,7 +115,7 @@ const Contact = ()=>{
 
 
     return(
-        <div className="homeLoad">
+        <div className={pageDirection("contact", from)}>
             <Alert 
             isOpen = {alert.status}
             toggle = {dismissAlert}

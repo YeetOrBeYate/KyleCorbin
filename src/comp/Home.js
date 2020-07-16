@@ -4,10 +4,12 @@ import self from "../img/profSelf.jpeg"
 import '../App.css';
 import "../Animations/page.css"
 
-const Home=(props)=>{
+
+const Home=()=>{
 
 
 
+ 
     return(
     <div className="homeLoad">
         <Media>

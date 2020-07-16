@@ -6,10 +6,10 @@ const MyLink = (props) => {
 
     let name = props.name
     let destination = props.destination
+
     return (
         <>
-            <Link  className="nav-link" to={{pathname: destination, state: { from: location.pathname }}}>{name}</Link>
-
+            <Link className="nav-link" to={{pathname: destination, state: { from: location.pathname }}}>{name}</Link>
         </>
     )
 }

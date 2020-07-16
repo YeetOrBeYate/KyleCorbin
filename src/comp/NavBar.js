@@ -8,10 +8,12 @@ import {
     NavItem,
     NavLink,
   } from 'reactstrap';
-import {Link} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import MyLink from "./MyLink"
 
 const NavBarcomp = ()=>{
+
+    
 
 
 
@@ -38,14 +40,13 @@ const NavBarcomp = ()=>{
             <Collapse isOpen = {isOpen} navbar>
                 <Nav navbar>
                     <NavItem>
-                        {/* <Link className="nav-link" to="/portfolio">Portfolio</Link> */}
                         <MyLink name="Portfolio" destination="/portfolio"></MyLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing">Resume</NavLink>
+                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing" target="_blank">Resume</NavLink>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/contact">Contact</Link>
+                        <MyLink name="Contact" destination="/contact"></MyLink>
                     </NavItem>
                 </Nav>
             </Collapse>
@@ -59,13 +60,13 @@ const NavBarcomp = ()=>{
             <Collapse isOpen = {isOpen} navbar>
                 <Nav navbar>
                     <NavItem>
-                        <Link className="nav-link" to="/portfolio">Portfolio</Link>
+                        <MyLink name="Portfolio" destination="/portfolio"></MyLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit">Resume</NavLink>
+                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing" target="_blank">Resume</NavLink>
                     </NavItem>
                     <NavItem>
-                        <Link className="nav-link" to="/contact">Contact</Link>
+                        <MyLink name="Contact" destination="/contact"></MyLink>
                     </NavItem>
                 </Nav>
             </Collapse>
