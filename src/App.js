@@ -15,9 +15,6 @@ import "./Animations/page.css"
 
 function App() {
 
-  
-
-
   return (
     <div className="App">
       <NavBarcomp/>
