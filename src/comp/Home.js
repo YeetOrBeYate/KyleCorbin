@@ -30,7 +30,7 @@ const Home=()=>{
                 <h2>About me</h2>
                 <p>I like seeking opportunities and challenges that are meaningful to me. I graduated from Georgia College with a B.B.A in MIS in August 2018.
                 Soon after that, I began work at Exela Technologies in a Systems Analyst role. During my time there I was exposed to engaging work, full of problem solving and planning.</p>
-                <p>After much exposure to IT in a production setting, I wanted to learn programing in a more formal setting. In September 2019 I enrolled in Lambda school's full-stack developer program. Learning in a 100% remote environment allowed me to develop self-discipline for both school and personal projects.</p>
+                <p>After much exposure to IT in a production setting, I wanted to learn programing in a more formal setting. In September 2019, I enrolled in Lambda school's full-stack developer program. Learning in a 100% remote environment allowed me to develop self-discipline for both school and personal projects.</p>
             </div>
             <div>
                 <h2>Contact</h2>
