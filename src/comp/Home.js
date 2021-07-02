@@ -5,9 +5,6 @@ import '../App.css';
 import "../Animations/page.css"
 import blackBusinessMan from "../img/BlackBusinessman.jpg"
 
-const insideElectron = !!window.api?.isElectron
-
-const yeet = insideElectron ? 'im true' : 'im false'
 
 
 
@@ -23,7 +20,7 @@ const Home = () => {
             </Media>
             <Media body>
                 <Media heading>
-                Hello, my name is Kyle {yeet}
+                Hello, my name is Kyle Corbin
                 </Media>
                 I'm a full-stack developer focusing on building products that make a difference.
             </Media>
