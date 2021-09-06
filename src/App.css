@@ -403,5 +403,18 @@
   }
 }
 
+.delayContainer{
+  Height: 100%;
+}
+
+.bannerContainer{
+  margin-top: 10%;
+}
+
+.bannerTitle{
+  margin: 5px;
+
+}
+
 
 

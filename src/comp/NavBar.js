@@ -42,9 +42,6 @@ const NavBarcomp = ()=>{
                         <MyLink name="Portfolio" destination="/portfolio"></MyLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="https://docs.google.com/document/d/1xhGGkW8qx1XCKsVDJ3AEn8vNRsFYwCC6DsCHddGen8o/edit?usp=sharing" target="_blank">Resume</NavLink>
-                    </NavItem>
-                    <NavItem>
                         <MyLink name="Contact" destination="/contact"></MyLink>
                     </NavItem>
                 </Nav>

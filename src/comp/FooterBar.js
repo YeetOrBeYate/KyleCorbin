@@ -27,7 +27,7 @@ const FooterBar = ()=>{
 
         .catch(err=>{
 
-            setQoute({...qoute, string:'Quote api limit reached', author:"sorry :("})
+            setQoute({ ...qoute, string:'carpe diem', author:"sorry :("})
         })
     },[])
 

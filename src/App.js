@@ -5,6 +5,7 @@ import Home from './comp/Home'
 import Portfolio from './comp/Portfolio'
 import Contact from './comp/Contact'
 import ProjectPage from "./comp/ProjectPage"
+import UnderConstruction from './comp/UnderConstruction'
 import {Container } from 'reactstrap';
 import {Route,Switch} from "react-router-dom"
 import {updateDoodle} from "./Util/Utils"
@@ -38,9 +39,9 @@ function App() {
         </div>
         <Container className="themed-container" fluid="sm">
           <Switch>
-            <Route path="/portfolio" component={Portfolio}/>
-            <Route path="/contact" component={Contact}/>
-            <Route path="/project/:id" component={ProjectPage}/>
+            <Route path="/portfolio" component={UnderConstruction}/>
+            <Route path="/contact" component={UnderConstruction}/>
+            <Route path="/project/:id" component={UnderConstruction}/>
             <Route path='/' component={Home}/>
           </Switch>
         </Container>
